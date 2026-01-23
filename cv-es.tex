@@ -1,4 +1,4 @@
-\documentclass[11pt,a4paper]{article}
+\documentclass[10pt,a4paper]{article}
 
 % Paquetes
 \usepackage[utf8]{inputenc}
@@ -7,130 +7,113 @@
 \usepackage{geometry}
 \usepackage{enumitem}
 \usepackage{titlesec}
-\usepackage{xcolor}
 \usepackage{hyperref}
-\usepackage{fontawesome5}
 
 % Diseño de página
-\geometry{left=1.5cm, right=1.5cm, top=1.5cm, bottom=1.5cm}
+\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
 \pagestyle{empty}
 
-% Colores
-\definecolor{titlecolor}{RGB}{0, 102, 204}
-\definecolor{sectioncolor}{RGB}{0, 102, 204}
+% Formato de secciones - estilo minimal
+\titleformat{\section}{\large\bfseries}{}{0em}{}
+\titlespacing*{\section}{0pt}{10pt}{4pt}
 
-% Formato de secciones
-\titleformat{\section}{\Large\bfseries\color{sectioncolor}}{}{0em}{}[\titlerule]
-\titlespacing*{\section}{0pt}{12pt}{6pt}
-
-% Configuración de hipervínculos
+% Configuración de hipervínculos - sin colores
 \hypersetup{
-    colorlinks=true,
-    linkcolor=blue,
-    urlcolor=blue,
+    colorlinks=false,
     pdfborder={0 0 0}
 }
 
 % Comandos personalizados
 \newcommand{\cvitem}[2]{
-    \textbf{#1} \hfill #2
+    \textbf{#1} \hfill \textit{#2}
 }
 
 \newcommand{\cvsubitem}[1]{
-    \textit{#1}
+    #1
 }
 
 \begin{document}
 
 % Encabezado
 \begin{center}
-    {\Huge\bfseries\color{titlecolor} Facundo Torraca}
+    {\LARGE\bfseries Facundo Torraca}
 
-    \vspace{0.3cm}
+    \vspace{0.2cm}
 
-    \faEnvelope\ \href{mailto:facundotorraca@gmail.com}{facundotorraca@gmail.com} \ \ |\ \
-    \faLinkedin\ \href{https://linkedin.com/in/facundotorraca}{linkedin.com/in/facundotorraca} \ \ |\ \
-    \faGithub\ \href{https://github.com/facundotorraca}{github.com/facundotorraca}
+    facundotorraca@gmail.com $\cdot$ linkedin.com/in/facundotorraca $\cdot$ github.com/facundotorraca
 \end{center}
 
-\vspace{0.5cm}
+\vspace{0.3cm}
 
 % Resumen Profesional
-\section{Resumen Profesional}
+\section*{Resumen}
 Líder de equipo de ingeniería de software con más de 4 años de experiencia especializado en sistemas de resolución de identidades, pipelines de datos y arquitecturas distribuidas. Historial comprobado liderando equipos multifuncionales y diseñando sistemas de alta disponibilidad que aseguran la continuidad del negocio durante transiciones tecnológicas. Experto en ingeniería de datos con dominio de Snowflake, Python, Golang y Kubernetes.
 
 % Experiencia Laboral
-\section{Experiencia Profesional}
+\section*{Experiencia}
 
 \cvitem{Líder de Equipo de Ingeniería de Software}{Abr 2024 -- Actualidad}\\
 \cvsubitem{Innovid}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt]
-    \item Lidero un equipo de 3 ingenieros supervisando la resolución de identidades en todos los servicios de la empresa, garantizando la identificación de usuarios entre plataformas
-    \item Diseño e implemento sistemas de datos de alta disponibilidad y pipelines que procesan millones de señales de identidad diariamente
-    \item Conduzco decisiones arquitectónicas para la infraestructura de identidades que soporta publicidad y analítica multicanal
-    \item Mentoricé miembros del equipo en mejores prácticas de ingeniería de datos y diseño de sistemas distribuidos
+\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
+    \item Lidero un equipo de 3 ingenieros supervisando la resolución de identidades en todos los servicios
+    \item Diseño e implemento sistemas de datos de alta disponibilidad procesando millones de señales diarias
+    \item Conduzco decisiones arquitectónicas para infraestructura de identidades de publicidad multicanal
+    \item Mentoricé miembros del equipo en ingeniería de datos y diseño de sistemas distribuidos
 \end{itemize}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 \cvitem{Ingeniero de Software Semi-Senior}{May 2022 -- Abr 2024}\\
 \cvsubitem{Innovid}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt]
-    \item Diseñé y desarrollé una solución interna de resolución de identidades mejorando la precisión en segmentación de anuncios y habilitando reportes multicanal en la plataforma
-    \item Aseguré la continuidad del negocio implementando estrategias de identidad compatibles con privacidad durante la transición hacia entornos sin cookies
-    \item Construí y mantuve pipelines de datos integrando con proveedores externos de identidad utilizando Snowflake (SQL), DBT y flujos de trabajo Argo
-    \item Lideré el desarrollo de un servicio de validación de identificadores de alta calidad usando Python para detectar y clasificar señales de identidad premium (IPs, cookies, IDs de dispositivos)
+\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
+    \item Diseñé solución interna de resolución de identidades mejorando precisión en segmentación de anuncios
+    \item Aseguré continuidad del negocio implementando estrategias compatibles con privacidad
+    \item Construí pipelines de datos integrando con proveedores externos usando Snowflake, DBT y Argo
+    \item Lideré desarrollo de servicio de validación de identificadores usando Python
     \item Colaboré con equipos de producto y analítica para definir métricas y KPIs de identidad
 \end{itemize}
 
-\vspace{0.3cm}
+\vspace{0.2cm}
 
 \cvitem{Desarrollador Full Stack}{Nov 2020 -- Abr 2022}\\
 \cvsubitem{Okapii}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt]
-    \item Desarrollé aplicaciones empresariales personalizadas incluyendo sistemas contables, plataformas de gestión de inventario y herramientas de programación de turnos
-    \item Construí soluciones end-to-end desde la recopilación de requisitos hasta el despliegue y mantenimiento
-    \item Entregué soluciones de software a medida que optimizaron las operaciones comerciales para múltiples clientes
+\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
+    \item Desarrollé aplicaciones empresariales personalizadas incluyendo sistemas contables y de inventario
+    \item Construí soluciones end-to-end desde requisitos hasta despliegue
+    \item Entregué soluciones de software optimizando operaciones comerciales para múltiples clientes
 \end{itemize}
 
 % Educación
-\section{Educación}
+\section*{Educación}
 
 \cvitem{Ingeniería en Informática (Grado combinado Licenciatura y Maestría)}{2017 -- 2023}\\
 \cvsubitem{Universidad de Buenos Aires, Facultad de Ingeniería}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt]
-    \item Enfoque en sistemas distribuidos, arquitectura de software e ingeniería de datos
-    \item Tesis: Sistema de venta de entradas basado en blockchain con arquitectura de microservicios
-\end{itemize}
 
 % Habilidades Técnicas
-\section{Habilidades Técnicas}
+\section*{Habilidades Técnicas}
 
-\textbf{Lenguajes de Programación:} Python, Golang, SQL, JavaScript, TypeScript
+\textbf{Lenguajes:} Python, Golang, SQL, JavaScript, TypeScript
 
-\textbf{Ingeniería de Datos:} Snowflake, DBT, Argo Workflows, pipelines ETL/ELT, modelado de datos
+\textbf{Ingeniería de Datos:} Snowflake, DBT, Argo Workflows, pipelines ETL/ELT
 
-\textbf{Infraestructura y DevOps:} Kubernetes, Docker, arquitectura de microservicios, CI/CD
-
-\textbf{Bases de Datos:} Bases de datos SQL, data warehouses, optimización de consultas
+\textbf{Infraestructura:} Kubernetes, Docker, microservicios, CI/CD
 
 \textbf{Dominios:} Resolución de identidades, AdTech, sistemas compatibles con privacidad, sistemas distribuidos
 
 % Proyectos
-\section{Proyectos Destacados}
+\section*{Proyectos}
 
 \cvitem{Ticken -- Sistema de Ticketing con Blockchain}{2023}\\
-\cvsubitem{\href{https://github.com/ticken-ts}{github.com/ticken-ts}}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt]
-    \item Diseñé e implementé una plataforma distribuida de venta de entradas aprovechando blockchains privadas y públicas para transacciones transparentes y seguras
-    \item Construí arquitectura de microservicios en Golang con infraestructura completamente definida en Kubernetes
-    \item Desarrollé servidor de orquestación centralizado para coordinar interacciones blockchain y asegurar la confiabilidad del sistema
-    \item Proyecto de tesis universitaria demostrando experiencia en sistemas distribuidos y tecnología blockchain
+\cvsubitem{github.com/ticken-ts}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
+    \item Diseñé plataforma distribuida de venta de entradas con blockchains públicas y privadas
+    \item Construí arquitectura de microservicios en Golang con infraestructura definida en Kubernetes
+    \item Proyecto de tesis universitaria demostrando experiencia en sistemas distribuidos
 \end{itemize}
 
 % Idiomas
-\section{Idiomas}
+\section*{Idiomas}
 
-\textbf{Español:} Nativo \quad \textbf{Inglés:} Dominio profesional \quad \textbf{Portugués:} Lectura y escritura
+Español (Nativo), Inglés (Dominio profesional), Portugués (Lectura y escritura)
 
 \end{document}

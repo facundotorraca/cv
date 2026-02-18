@@ -1,0 +1,141 @@
+\documentclass[10pt,a4paper]{article}
+
+% Pacotes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+% Layout da página
+\geometry{left=1.8cm, right=1.8cm, top=1.8cm, bottom=1.8cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Formatação de seções — rótulo em maiúsculas + linha fina abaixo
+\titleformat{\section}
+  {\small\bfseries\uppercase}
+  {}{0em}{}
+  [\vspace{-4pt}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+% Hiperlinks — preto, sem borda
+\hypersetup{colorlinks=true, urlcolor=black, pdfborder={0 0 0}}
+
+% \cventry{cargo}{empresa}{data}
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \hfill \textit{#3}\\[3pt]
+  \textit{#2}%
+}
+
+\begin{document}
+
+% ── Cabeçalho ──────────────────────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries Facundo Torraca}
+
+  \vspace{0.25cm}
+
+  \href{mailto:facundotorraca@gmail.com}
+    {\faEnvelope\ facundotorraca@gmail.com}
+  \quad\textperiodcentered\quad
+  \href{https://linkedin.com/in/facundotorraca}
+    {\faLinkedin\ linkedin.com/in/facundotorraca}
+  \quad\textperiodcentered\quad
+  \href{https://github.com/facundotorraca}
+    {\faGithub\ github.com/facundotorraca}
+\end{center}
+
+% ── Resumo ─────────────────────────────────────────────────────────────────────
+\section*{Resumo}
+Líder de equipe de engenharia de software com mais de 5 anos de experiência
+especializado em pipelines de dados, sistemas de resolução de identidade e
+arquiteturas distribuídas. Histórico comprovado liderando equipes
+multifuncionais e projetando sistemas de alta disponibilidade. Proficiente em
+Python, Golang, Snowflake e Kubernetes.
+
+% ── Experiência ────────────────────────────────────────────────────────────────
+\section*{Experiência}
+
+\cventry{Líder de Equipe de Engenharia de Software}{Singular}{Abr 2025 -- Presente}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Lidero uma equipe de 3 engenheiros e 1 gerente de produto na equipe de
+        coleta de dados, gerenciando mais de 2000 integrações com redes de
+        anúncios para obter e padronizar dados de desempenho
+  \item Impulsionei iniciativas para reduzir erros em pipelines e melhorar a
+        observabilidade end-to-end do fluxo de coleta de dados
+  \item Desenvolvi ferramentas de monitoramento e visualização incluindo
+        dashboards no Datadog e relatórios no Tableau para a saúde dos pipelines
+\end{itemize}
+
+\vspace{0.25cm}
+
+\cventry{Líder de Equipe de Engenharia de Software}{Innovid}{Abr 2024 -- Abr 2025}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Liderei uma equipe de 3 engenheiros supervisionando a resolução de
+        identidade em todos os serviços da empresa
+  \item Projetei e implementei sistemas de dados de alta disponibilidade
+        processando milhões de sinais de identidade diariamente
+  \item Conduzi decisões arquiteturais para infraestrutura de identidade em
+        publicidade multicanal
+  \item Mentoreei membros da equipe em engenharia de dados e design de
+        sistemas distribuídos
+\end{itemize}
+
+\vspace{0.25cm}
+
+\cventry{Engenheiro de Software}{Innovid}{Mai 2022 -- Abr 2024}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Arquitetei solução interna de resolução de identidade melhorando a
+        precisão na segmentação de anúncios
+  \item Garanti a continuidade do negócio implementando estratégias compatíveis
+        com privacidade para ambientes sem cookies
+  \item Construí pipelines de dados integrando com provedores externos usando
+        Snowflake, DBT e Argo
+  \item Liderei o desenvolvimento de um serviço de validação de identificadores
+        em Python para sinais de identidade premium
+  \item Colaborei com equipes de produto e análise para definir métricas e
+        KPIs de identidade
+\end{itemize}
+
+\vspace{0.25cm}
+
+\cventry{Desenvolvedor Full Stack}{Okapii}{Nov 2020 -- Abr 2022}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Desenvolvi aplicações empresariais personalizadas incluindo sistemas de
+        contabilidade e gestão de estoque
+  \item Construí soluções end-to-end desde o levantamento de requisitos até a
+        implantação
+  \item Entreguei soluções de software sob medida otimizando as operações
+        comerciais para múltiplos clientes
+\end{itemize}
+
+% ── Educação ───────────────────────────────────────────────────────────────────
+\section*{Educação}
+
+\cventry{Engenharia de Computação (Bacharelado e Mestrado integrados)}%
+  {Universidade de Buenos Aires, Faculdade de Engenharia}{2017 -- 2023}
+
+% ── Habilidades Técnicas ───────────────────────────────────────────────────────
+\section*{Habilidades Técnicas}
+
+\textbf{Programação:} Python, Golang, SQL, JavaScript, TypeScript
+
+\textbf{Engenharia de Dados:} Snowflake, DBT, Argo Workflows, pipelines ETL/ELT
+
+\textbf{Infraestrutura e DevOps:} Kubernetes, Docker, pipelines de CI/CD
+
+\textbf{Especialidades:} Resolução de identidade, AdTech, sistemas distribuídos,
+observabilidade de dados
+
+% ── Idiomas ────────────────────────────────────────────────────────────────────
+\section*{Idiomas}
+
+Espanhol (Nativo)
+\quad\textperiodcentered\quad Português (Bilíngue --- C2)
+\quad\textperiodcentered\quad Inglês (Fluente --- C1)
+
+\end{document}

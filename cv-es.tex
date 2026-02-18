@@ -8,112 +8,134 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{fontawesome5}
 
 % Diseño de página
-\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+\geometry{left=1.8cm, right=1.8cm, top=1.8cm, bottom=1.8cm}
 \pagestyle{empty}
+\setlength{\parindent}{0pt}
 
-% Formato de secciones - estilo minimal
-\titleformat{\section}{\large\bfseries}{}{0em}{}
-\titlespacing*{\section}{0pt}{10pt}{4pt}
+% Formato de secciones — etiqueta en mayúsculas + línea fina debajo
+\titleformat{\section}
+  {\small\bfseries\uppercase}
+  {}{0em}{}
+  [\vspace{-4pt}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{14pt}{6pt}
 
-% Configuración de hipervínculos - sin colores
-\hypersetup{
-    colorlinks=false,
-    pdfborder={0 0 0}
-}
+% Hipervínculos — negro, sin borde
+\hypersetup{colorlinks=true, urlcolor=black, pdfborder={0 0 0}}
 
-% Comandos personalizados
-\newcommand{\cvitem}[2]{
-    \textbf{#1} \hfill \textit{#2}
-}
-
-\newcommand{\cvsubitem}[1]{
-    #1
+% \cventry{cargo}{empresa}{fecha}
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \hfill \textit{#3}\\[3pt]
+  \textit{#2}%
 }
 
 \begin{document}
 
-% Encabezado
+% ── Encabezado ─────────────────────────────────────────────────────────────────
 \begin{center}
-    {\LARGE\bfseries Facundo Torraca}
+  {\LARGE\bfseries Facundo Torraca}
 
-    \vspace{0.2cm}
+  \vspace{0.25cm}
 
-    facundotorraca@gmail.com $\cdot$ linkedin.com/in/facundotorraca $\cdot$ github.com/facundotorraca
+  \href{mailto:facundotorraca@gmail.com}
+    {\faEnvelope\ facundotorraca@gmail.com}
+  \quad\textperiodcentered\quad
+  \href{https://linkedin.com/in/facundotorraca}
+    {\faLinkedin\ linkedin.com/in/facundotorraca}
+  \quad\textperiodcentered\quad
+  \href{https://github.com/facundotorraca}
+    {\faGithub\ github.com/facundotorraca}
 \end{center}
 
-\vspace{0.3cm}
-
-% Resumen Profesional
+% ── Resumen ────────────────────────────────────────────────────────────────────
 \section*{Resumen}
-Líder de equipo de ingeniería de software con más de 4 años de experiencia especializado en sistemas de resolución de identidades, pipelines de datos y arquitecturas distribuidas. Historial comprobado liderando equipos multifuncionales y diseñando sistemas de alta disponibilidad que aseguran la continuidad del negocio durante transiciones tecnológicas. Experto en ingeniería de datos con dominio de Snowflake, Python, Golang y Kubernetes.
+Líder de equipo de ingeniería de software con más de 5 años de experiencia
+especializado en pipelines de datos, sistemas de resolución de identidades y
+arquitecturas distribuidas. Historial comprobado liderando equipos
+multifuncionales y diseñando sistemas de alta disponibilidad. Dominio de
+Python, Golang, Snowflake y Kubernetes.
 
-% Experiencia Laboral
+% ── Experiencia ────────────────────────────────────────────────────────────────
 \section*{Experiencia}
 
-\cvitem{Líder de Equipo de Ingeniería de Software}{Abr 2024 -- Actualidad}\\
-\cvsubitem{Innovid}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
-    \item Lidero un equipo de 3 ingenieros supervisando la resolución de identidades en todos los servicios
-    \item Diseño e implemento sistemas de datos de alta disponibilidad procesando millones de señales diarias
-    \item Conduzco decisiones arquitectónicas para infraestructura de identidades de publicidad multicanal
-    \item Mentoricé miembros del equipo en ingeniería de datos y diseño de sistemas distribuidos
+\cventry{Líder de Equipo de Ingeniería de Software}{Singular}{Abr 2025 -- Actualidad}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Lidero un equipo de 3 ingenieros y 1 product manager en el equipo de
+        recolección de datos, gestionando más de 2000 integraciones con redes
+        de anuncios para obtener y estandarizar datos de rendimiento
+  \item Impulsé iniciativas para reducir errores en pipelines y mejorar la
+        observabilidad end-to-end del flujo de recolección de datos
+  \item Desarrollé herramientas de monitoreo y visualización incluyendo
+        dashboards en Datadog e informes en Tableau para la salud de los pipelines
 \end{itemize}
 
-\vspace{0.2cm}
+\vspace{0.25cm}
 
-\cvitem{Ingeniero de Software Semi-Senior}{May 2022 -- Abr 2024}\\
-\cvsubitem{Innovid}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
-    \item Diseñé solución interna de resolución de identidades mejorando precisión en segmentación de anuncios
-    \item Aseguré continuidad del negocio implementando estrategias compatibles con privacidad
-    \item Construí pipelines de datos integrando con proveedores externos usando Snowflake, DBT y Argo
-    \item Lideré desarrollo de servicio de validación de identificadores usando Python
-    \item Colaboré con equipos de producto y analítica para definir métricas y KPIs de identidad
+\cventry{Líder de Equipo de Ingeniería de Software}{Innovid}{Abr 2024 -- Abr 2025}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Lideré un equipo de 3 ingenieros supervisando la resolución de
+        identidades en todos los servicios de la empresa
+  \item Diseñé e implementé sistemas de datos de alta disponibilidad
+        procesando millones de señales de identidad diariamente
+  \item Conduje decisiones arquitectónicas para infraestructura de identidades
+        en publicidad multicanal
+  \item Mentoricé miembros del equipo en ingeniería de datos y diseño de
+        sistemas distribuidos
 \end{itemize}
 
-\vspace{0.2cm}
+\vspace{0.25cm}
 
-\cvitem{Desarrollador Full Stack}{Nov 2020 -- Abr 2022}\\
-\cvsubitem{Okapii}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
-    \item Desarrollé aplicaciones empresariales personalizadas incluyendo sistemas contables y de inventario
-    \item Construí soluciones end-to-end desde requisitos hasta despliegue
-    \item Entregué soluciones de software optimizando operaciones comerciales para múltiples clientes
+\cventry{Ingeniero de Software}{Innovid}{May 2022 -- Abr 2024}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Diseñé solución interna de resolución de identidades mejorando la
+        precisión en segmentación de anuncios
+  \item Aseguré la continuidad del negocio implementando estrategias compatibles
+        con privacidad para entornos sin cookies
+  \item Construí pipelines de datos integrando con proveedores externos usando
+        Snowflake, DBT y Argo
+  \item Lideré el desarrollo de un servicio de validación de identificadores en
+        Python para señales de identidad premium
+  \item Colaboré con equipos de producto y analítica para definir métricas y
+        KPIs de identidad
 \end{itemize}
 
-% Educación
+\vspace{0.25cm}
+
+\cventry{Desarrollador Full Stack}{Okapii}{Nov 2020 -- Abr 2022}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Desarrollé aplicaciones empresariales personalizadas incluyendo sistemas
+        de contabilidad e inventario
+  \item Construí soluciones end-to-end desde la recopilación de requisitos hasta
+        el despliegue
+  \item Entregué soluciones de software a medida optimizando las operaciones
+        comerciales para múltiples clientes
+\end{itemize}
+
+% ── Educación ──────────────────────────────────────────────────────────────────
 \section*{Educación}
 
-\cvitem{Ingeniería en Informática (Grado combinado Licenciatura y Maestría)}{2017 -- 2023}\\
-\cvsubitem{Universidad de Buenos Aires, Facultad de Ingeniería}
+\cventry{Ingeniería en Informática (Licenciatura y Maestría combinadas)}%
+  {Universidad de Buenos Aires, Facultad de Ingeniería}{2017 -- 2023}
 
-% Habilidades Técnicas
+% ── Habilidades Técnicas ───────────────────────────────────────────────────────
 \section*{Habilidades Técnicas}
 
-\textbf{Lenguajes:} Python, Golang, SQL, JavaScript, TypeScript
+\textbf{Programación:} Python, Golang, SQL, JavaScript, TypeScript
 
 \textbf{Ingeniería de Datos:} Snowflake, DBT, Argo Workflows, pipelines ETL/ELT
 
-\textbf{Infraestructura:} Kubernetes, Docker, microservicios, CI/CD
+\textbf{Infraestructura y DevOps:} Kubernetes, Docker, pipelines de CI/CD
 
-\textbf{Dominios:} Resolución de identidades, AdTech, sistemas compatibles con privacidad, sistemas distribuidos
+\textbf{Especialidades:} Resolución de identidades, AdTech, sistemas distribuidos,
+observabilidad de datos
 
-% Proyectos
-\section*{Proyectos}
-
-\cvitem{Ticken -- Sistema de Ticketing con Blockchain}{2023}\\
-\cvsubitem{github.com/ticken-ts}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
-    \item Diseñé plataforma distribuida de venta de entradas con blockchains públicas y privadas
-    \item Construí arquitectura de microservicios en Golang con infraestructura definida en Kubernetes
-    \item Proyecto de tesis universitaria demostrando experiencia en sistemas distribuidos
-\end{itemize}
-
-% Idiomas
+% ── Idiomas ────────────────────────────────────────────────────────────────────
 \section*{Idiomas}
 
-Español (Nativo), Inglés (Dominio profesional), Portugués (Lectura y escritura)
+Español (Nativo)
+\quad\textperiodcentered\quad Portugués (Bilingüe --- C2)
+\quad\textperiodcentered\quad Inglés (Fluido --- C1)
 
 \end{document}

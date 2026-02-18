@@ -21,19 +21,26 @@ jobs:
         root_file: |
           cv-en.tex
           cv-es.tex
+          cv-pt.tex
         args: -pdf -interaction=nonstopmode -file-line-error
 
-    - name: Upload English CV
+    - name: "[EN] Upload CV"
       uses: actions/upload-artifact@v4
       with:
         name: cv-en
         path: cv-en.pdf
 
-    - name: Upload Spanish CV
+    - name: "[ES] Upload CV"
       uses: actions/upload-artifact@v4
       with:
         name: cv-sp
         path: cv-es.pdf
+
+    - name: "[PT] Upload CV"
+      uses: actions/upload-artifact@v4
+      with:
+        name: cv-pt
+        path: cv-pt.pdf
 
     - name: Create Release on Tag
       if: startsWith(github.ref, 'refs/tags/')
@@ -42,5 +49,6 @@ jobs:
         files: |
           cv-en.pdf
           cv-es.pdf
+          cv-pt.pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

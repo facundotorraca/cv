@@ -8,112 +8,134 @@
 \usepackage{enumitem}
 \usepackage{titlesec}
 \usepackage{hyperref}
+\usepackage{fontawesome5}
 
 % Page layout
-\geometry{left=2cm, right=2cm, top=2cm, bottom=2cm}
+\geometry{left=1.8cm, right=1.8cm, top=1.8cm, bottom=1.8cm}
 \pagestyle{empty}
+\setlength{\parindent}{0pt}
 
-% Section formatting - minimal style
-\titleformat{\section}{\large\bfseries}{}{0em}{}
-\titlespacing*{\section}{0pt}{10pt}{4pt}
+% Section formatting — uppercase label + thin rule underneath
+\titleformat{\section}
+  {\small\bfseries\uppercase}
+  {}{0em}{}
+  [\vspace{-4pt}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{14pt}{6pt}
 
-% Hyperlink setup - no colors
-\hypersetup{
-    colorlinks=false,
-    pdfborder={0 0 0}
-}
+% Hyperlinks — black, no border
+\hypersetup{colorlinks=true, urlcolor=black, pdfborder={0 0 0}}
 
-% Custom commands
-\newcommand{\cvitem}[2]{
-    \textbf{#1} \hfill \textit{#2}
-}
-
-\newcommand{\cvsubitem}[1]{
-    #1
+% \cventry{role}{company}{date}
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \hfill \textit{#3}\\[3pt]
+  \textit{#2}%
 }
 
 \begin{document}
 
-% Header
+% ── Header ────────────────────────────────────────────────────────────────────
 \begin{center}
-    {\LARGE\bfseries Facundo Torraca}
+  {\LARGE\bfseries Facundo Torraca}
 
-    \vspace{0.2cm}
+  \vspace{0.25cm}
 
-    facundotorraca@gmail.com $\cdot$ linkedin.com/in/facundotorraca $\cdot$ github.com/facundotorraca
+  \href{mailto:facundotorraca@gmail.com}
+    {\faEnvelope\ facundotorraca@gmail.com}
+  \quad\textperiodcentered\quad
+  \href{https://linkedin.com/in/facundotorraca}
+    {\faLinkedin\ linkedin.com/in/facundotorraca}
+  \quad\textperiodcentered\quad
+  \href{https://github.com/facundotorraca}
+    {\faGithub\ github.com/facundotorraca}
 \end{center}
 
-\vspace{0.3cm}
-
-% Professional Summary
+% ── Summary ───────────────────────────────────────────────────────────────────
 \section*{Summary}
-Software Engineering Team Lead with 4+ years of experience specializing in identity resolution systems, data pipelines, and distributed architectures. Proven track record of leading cross-functional teams and designing high-availability systems that ensure business continuity during technological transitions. Expert in data engineering with proficiency in Snowflake, Python, Golang, and Kubernetes.
+Software Engineering Team Lead with 5+ years of experience specializing
+in data pipelines, identity resolution systems, and distributed
+architectures. Proven track record of leading cross-functional teams and
+designing high-availability systems. Proficient in Python, Golang,
+Snowflake, and Kubernetes.
 
-% Work Experience
+% ── Experience ────────────────────────────────────────────────────────────────
 \section*{Experience}
 
-\cvitem{Software Engineering Team Lead}{Apr 2024 -- Present}\\
-\cvsubitem{Innovid}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
-    \item Lead a team of 3 engineers overseeing identity resolution across all company services
-    \item Design and implement high-availability data systems processing millions of identity signals daily
-    \item Drive architectural decisions for identity infrastructure supporting multi-channel advertising
-    \item Mentor team members on data engineering and distributed systems design
+\cventry{Software Engineering Team Lead}{Singular}{Apr 2025 -- Present}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Lead a team of 3 engineers and 1 product manager on the data
+        collection team, managing 2000+ integrations with ad networks
+        to pull and standardize performance data
+  \item Drove initiatives to reduce pipeline errors and improve
+        end-to-end observability across the data collection workflow
+  \item Built monitoring and visualization tooling including Datadog
+        dashboards and Tableau reports to surface pipeline health
 \end{itemize}
 
-\vspace{0.2cm}
+\vspace{0.25cm}
 
-\cvitem{Semi-Senior Software Engineer}{May 2022 -- Apr 2024}\\
-\cvsubitem{Innovid}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
-    \item Architected internal identity resolution solution improving ad targeting accuracy
-    \item Ensured business continuity implementing privacy-compliant strategies for cookieless environments
-    \item Built data pipelines integrating with external providers using Snowflake, DBT, and Argo
-    \item Led development of identifier validation service using Python for premium identity signals
-    \item Collaborated with product and analytics teams to define identity metrics and KPIs
+\cventry{Software Engineering Team Lead}{Innovid}{Apr 2024 -- Apr 2025}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Lead a team of 3 engineers overseeing identity resolution
+        across all company services
+  \item Design and implement high-availability data systems processing
+        millions of identity signals daily
+  \item Drive architectural decisions for identity infrastructure
+        supporting multi-channel advertising
+  \item Mentor team members on data engineering and distributed
+        systems design
 \end{itemize}
 
-\vspace{0.2cm}
+\vspace{0.25cm}
 
-\cvitem{Full Stack Developer}{Nov 2020 -- Apr 2022}\\
-\cvsubitem{Okapii}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
-    \item Developed custom enterprise applications including accounting and inventory management systems
-    \item Built end-to-end solutions from requirements gathering through deployment
-    \item Delivered tailored software solutions streamlining business operations for multiple clients
+\cventry{Software Engineer}{Innovid}{May 2022 -- Apr 2024}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Architected internal identity resolution solution improving
+        ad targeting accuracy
+  \item Ensured business continuity implementing privacy-compliant
+        strategies for cookieless environments
+  \item Built data pipelines integrating with external providers
+        using Snowflake, DBT, and Argo
+  \item Led development of an identifier validation service in Python
+        for premium identity signals
+  \item Collaborated with product and analytics teams to define
+        identity metrics and KPIs
 \end{itemize}
 
-% Education
+\vspace{0.25cm}
+
+\cventry{Full Stack Developer}{Okapii}{Nov 2020 -- Apr 2022}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Developed custom enterprise applications including accounting
+        and inventory management systems
+  \item Built end-to-end solutions from requirements gathering through
+        deployment
+  \item Delivered tailored software solutions streamlining business
+        operations for multiple clients
+\end{itemize}
+
+% ── Education ─────────────────────────────────────────────────────────────────
 \section*{Education}
 
-\cvitem{Computer Engineering (Combined Bachelor's \& Master's)}{2017 -- 2023}\\
-\cvsubitem{Universidad de Buenos Aires, Facultad de Ingeniería}
+\cventry{Computer Engineering (Bachelor's \& Master's)}%
+  {Universidad de Buenos Aires, Facultad de Ingeniería}{2017 -- 2023}
 
-% Technical Skills
+% ── Technical Skills ──────────────────────────────────────────────────────────
 \section*{Technical Skills}
 
-\textbf{Languages:} Python, Golang, SQL, JavaScript, TypeScript
+\textbf{Programming:} Python, Golang, SQL, JavaScript, TypeScript
 
 \textbf{Data Engineering:} Snowflake, DBT, Argo Workflows, ETL/ELT pipelines
 
-\textbf{Infrastructure:} Kubernetes, Docker, microservices, CI/CD
+\textbf{Infrastructure \& DevOps:} Kubernetes, Docker, CI/CD pipelines
 
-\textbf{Domains:} Identity resolution, AdTech, privacy-compliant systems, distributed systems
+\textbf{Expertise:} Identity resolution, AdTech, distributed systems,
+data observability
 
-% Projects
-\section*{Projects}
-
-\cvitem{Ticken -- Blockchain Ticketing System}{2023}\\
-\cvsubitem{github.com/ticken-ts}
-\begin{itemize}[leftmargin=*, noitemsep, topsep=2pt, itemsep=2pt]
-    \item Designed distributed ticketing platform leveraging public and private blockchains
-    \item Built microservices architecture in Golang with infrastructure defined in Kubernetes
-    \item University thesis project demonstrating expertise in distributed systems
-\end{itemize}
-
-% Languages
+% ── Languages ─────────────────────────────────────────────────────────────────
 \section*{Languages}
 
-Spanish (Native), English (Professional proficiency), Portuguese (Reading and writing)
+Spanish (Native)
+\quad\textperiodcentered\quad Portuguese (Bilingual --- C2)
+\quad\textperiodcentered\quad English (Fluent --- C1)
 
 \end{document}

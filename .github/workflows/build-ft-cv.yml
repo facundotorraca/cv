@@ -1,10 +1,12 @@
-name: Build CV PDFs
+name: Build FT CV PDFs
 
 on:
   push:
     branches: [ master ]
+    paths: [ 'ft/**' ]
   pull_request:
     branches: [ master ]
+    paths: [ 'ft/**' ]
   workflow_dispatch:
 
 jobs:
@@ -22,33 +24,34 @@ jobs:
           cv-en.tex
           cv-es.tex
           cv-pt.tex
+        working_directory: ft
         args: -pdf -interaction=nonstopmode -file-line-error
 
     - name: "[EN] Upload CV"
       uses: actions/upload-artifact@v4
       with:
-        name: cv-en
-        path: cv-en.pdf
+        name: ft-cv-en
+        path: ft/cv-en.pdf
 
     - name: "[ES] Upload CV"
       uses: actions/upload-artifact@v4
       with:
-        name: cv-sp
-        path: cv-es.pdf
+        name: ft-cv-es
+        path: ft/cv-es.pdf
 
     - name: "[PT] Upload CV"
       uses: actions/upload-artifact@v4
       with:
-        name: cv-pt
-        path: cv-pt.pdf
+        name: ft-cv-pt
+        path: ft/cv-pt.pdf
 
     - name: Create Release on Tag
-      if: startsWith(github.ref, 'refs/tags/')
+      if: startsWith(github.ref, 'refs/tags/ft-')
       uses: softprops/action-gh-release@v1
       with:
         files: |
-          cv-en.pdf
-          cv-es.pdf
-          cv-pt.pdf
+          ft/cv-en.pdf
+          ft/cv-es.pdf
+          ft/cv-pt.pdf
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,57 @@
+name: Build LT CV PDFs
+
+on:
+  push:
+    branches: [ master ]
+    paths: [ 'lt/**' ]
+  pull_request:
+    branches: [ master ]
+    paths: [ 'lt/**' ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Compile LaTeX documents
+      uses: xu-cheng/latex-action@v3
+      with:
+        root_file: |
+          cv-en.tex
+          cv-es.tex
+          cv-pt.tex
+        working_directory: lt
+        args: -pdf -interaction=nonstopmode -file-line-error
+
+    - name: "[EN] Upload CV"
+      uses: actions/upload-artifact@v4
+      with:
+        name: lt-cv-en
+        path: lt/cv-en.pdf
+
+    - name: "[ES] Upload CV"
+      uses: actions/upload-artifact@v4
+      with:
+        name: lt-cv-es
+        path: lt/cv-es.pdf
+
+    - name: "[PT] Upload CV"
+      uses: actions/upload-artifact@v4
+      with:
+        name: lt-cv-pt
+        path: lt/cv-pt.pdf
+
+    - name: Create Release on Tag
+      if: startsWith(github.ref, 'refs/tags/lt-')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: |
+          lt/cv-en.pdf
+          lt/cv-es.pdf
+          lt/cv-pt.pdf
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,0 +1,124 @@
+\documentclass[10pt,a4paper]{article}
+
+% Pacotes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[portuguese]{babel}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+% Layout da página
+\geometry{left=1.8cm, right=1.8cm, top=1.8cm, bottom=1.8cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Formatação de seções — rótulo em maiúsculas + linha fina abaixo
+\titleformat{\section}
+  {\small\bfseries\uppercase}
+  {}{0em}{}
+  [\vspace{-4pt}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+% Hiperlinks — preto, sem borda
+\hypersetup{colorlinks=true, urlcolor=black, pdfborder={0 0 0}}
+
+% \cventry{cargo}{empresa}{data}
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \hfill \textit{#3}\\[3pt]
+  \textit{#2}%
+}
+
+\begin{document}
+
+% ── Cabeçalho ──────────────────────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries Lautaro Torraca}
+
+  \vspace{0.25cm}
+
+  \href{mailto:lautarotorraca@gmail.com}
+    {\faEnvelope\ lautarotorraca@gmail.com}
+  \quad\textperiodcentered\quad
+  \href{https://linkedin.com/in/lautarotorraca}
+    {\faLinkedin\ linkedin.com/in/lautarotorraca}
+  \quad\textperiodcentered\quad
+  \href{https://github.com/lautarotorraca}
+    {\faGithub\ github.com/lautarotorraca}
+\end{center}
+
+% ── Educação ───────────────────────────────────────────────────────────────────
+\section*{Educação}
+
+\cventry{Engenharia de Computação}{Universidade de Buenos Aires}{2020 -- Presente}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Em andamento, 27 de 32 disciplinas concluídas
+\end{itemize}
+
+% ── Cursos ─────────────────────────────────────────────────────────────────────
+\section*{Cursos}
+
+\cventry{Python Avançado}{Udemy}{2017}
+
+% ── Experiência Profissional ───────────────────────────────────────────────────
+\section*{Experiência Profissional}
+
+\cventry{Consultor EPM Oracle}{BPD Solutions}{Novembro 2025 -- Presente}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Desenvolvimento e manutenção de regras de negócio no Hyperion Planning
+  \item Criação e validação de formulários de carga e relatório em ambientes EPM
+  \item Implementação de validações e testes de dados via Smart View
+  \item Design e desenvolvimento de dashboards no Power BI, incluindo modelagem
+        de dados e construção de métricas com DAX
+  \item Manipulação e processamento de DataFrames para geração de relatórios
+        e análises
+  \item Desenvolvimento e otimização de plugins em Python para automação
+        de processos
+\end{itemize}
+
+% ── Projetos ───────────────────────────────────────────────────────────────────
+\section*{Projetos}
+
+\textbf{Jogo Multijogador -- Counter-Strike | CS2D}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Desenvolvido em C++ com arquitetura cliente-servidor, utilizando
+        sockets TCP bloqueantes e multithreading
+  \item Motor gráfico implementado com SDL2pp e interface gráfica construída
+        com Qt
+  \item Repositório no GitHub:
+        \href{https://github.com/LautaroTorraca/cs2d}{github.com/LautaroTorraca/cs2d}
+\end{itemize}
+
+% ── Habilidades Técnicas ───────────────────────────────────────────────────────
+\section*{Habilidades Técnicas}
+
+\textbf{Linguagens de programação:} JavaScript, TypeScript, Python, Java, C/C++, React
+
+\textbf{Ferramentas e tecnologias:} Git, Docker, Docker Compose, UML, Oracle EPM Cloud
+(PBCS), Hyperion Planning, Power BI
+
+\textbf{Bancos de dados:} SQL (relacionais), Essbase (OLAP multidimensional)
+
+\textbf{Paradigmas:} Programação Orientada a Objetos (POO), Programação Procedural
+
+\textbf{Testes:} Testes unitários, Test-Driven Development (TDD)
+
+% ── Habilidades Pessoais ───────────────────────────────────────────────────────
+\section*{Habilidades Pessoais}
+
+Atenção aos detalhes e qualidade do código
+\quad\textperiodcentered\quad Sólidas habilidades analíticas e de resolução de problemas
+
+Capacidade de trabalhar de forma autônoma e em equipe
+\quad\textperiodcentered\quad Gestão eficaz do tempo e habilidades de comunicação
+
+% ── Idiomas ────────────────────────────────────────────────────────────────────
+\section*{Idiomas}
+
+Espanhol (Nativo)
+\quad\textperiodcentered\quad Português (Nativo, Bilíngue)
+\quad\textperiodcentered\quad Inglês (Proficiência profissional)
+
+\end{document}

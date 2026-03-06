@@ -1,0 +1,38 @@
+{
+  "latex-workshop.latex.recipes": [
+    {
+      "name": "pdflatex",
+      "tools": ["pdflatex"]
+    }
+  ],
+  "latex-workshop.latex.tools": [
+    {
+      "name": "pdflatex",
+      "command": "pdflatex",
+      "args": [
+        "-synctex=1",
+        "-interaction=nonstopmode",
+        "-file-line-error",
+        "%DOC%"
+      ],
+      "env": {
+        "PATH": "/Library/TeX/texbin:/usr/local/bin:/usr/bin:/bin"
+      }
+    }
+  ],
+  "latex-workshop.view.pdf.viewer": "tab",
+  "latex-workshop.latex.autoBuild.run": "onSave",
+  "latex-workshop.latex.clean.fileTypes": [
+    "*.aux",
+    "*.log",
+    "*.out",
+    "*.fls",
+    "*.fdb_latexmk",
+    "*.synctex.gz",
+    "*.synctex(busy)",
+    "*.toc",
+    "*.blg",
+    "*.bbl"
+  ],
+  "latex-workshop.latex.autoClean.run": "onSucceeded"
+}

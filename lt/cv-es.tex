@@ -1,0 +1,124 @@
+\documentclass[10pt,a4paper]{article}
+
+% Paquetes
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish]{babel}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{fontawesome5}
+
+% Diseño de página
+\geometry{left=1.8cm, right=1.8cm, top=1.8cm, bottom=1.8cm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+
+% Formato de secciones — etiqueta en mayúsculas + línea fina debajo
+\titleformat{\section}
+  {\small\bfseries\uppercase}
+  {}{0em}{}
+  [\vspace{-4pt}\rule{\linewidth}{0.4pt}]
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+
+% Hipervínculos — negro, sin borde
+\hypersetup{colorlinks=true, urlcolor=black, pdfborder={0 0 0}}
+
+% \cventry{cargo}{empresa}{fecha}
+\newcommand{\cventry}[3]{%
+  \textbf{#1} \hfill \textit{#3}\\[3pt]
+  \textit{#2}%
+}
+
+\begin{document}
+
+% ── Encabezado ─────────────────────────────────────────────────────────────────
+\begin{center}
+  {\LARGE\bfseries Lautaro Torraca}
+
+  \vspace{0.25cm}
+
+  \href{mailto:lautarotorraca@gmail.com}
+    {\faEnvelope\ lautarotorraca@gmail.com}
+  \quad\textperiodcentered\quad
+  \href{https://linkedin.com/in/lautarotorraca}
+    {\faLinkedin\ linkedin.com/in/lautarotorraca}
+  \quad\textperiodcentered\quad
+  \href{https://github.com/lautarotorraca}
+    {\faGithub\ github.com/lautarotorraca}
+\end{center}
+
+% ── Educación ──────────────────────────────────────────────────────────────────
+\section*{Educación}
+
+\cventry{Ingeniería en Informática}{Universidad de Buenos Aires}{2020 -- Presente}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item En curso, 27 de 32 materias aprobadas
+\end{itemize}
+
+% ── Cursos ─────────────────────────────────────────────────────────────────────
+\section*{Cursos}
+
+\cventry{Python Avanzado}{Udemy}{2017}
+
+% ── Experiencia Profesional ────────────────────────────────────────────────────
+\section*{Experiencia Profesional}
+
+\cventry{Consultor EPM de Oracle}{BPD Solutions}{Noviembre 2025 -- Actualidad}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Desarrollo y mantenimiento de reglas de negocio en Hyperion Planning
+  \item Creación y validación de formularios de carga y reporte en entornos EPM
+  \item Implementación de validaciones y testing de datos mediante Smart View
+  \item Diseño y desarrollo de tableros en Power BI, incluyendo modelado de datos
+        y construcción de métricas con DAX
+  \item Manipulación y procesamiento de DataFrames para generación de reportes
+        y análisis
+  \item Desarrollo y optimización de plugins en Python para la automatización
+        de procesos
+\end{itemize}
+
+% ── Proyectos ──────────────────────────────────────────────────────────────────
+\section*{Proyectos}
+
+\textbf{Videojuego Multijugador -- Counter-Strike | CS2D}
+\begin{itemize}[leftmargin=*, noitemsep, topsep=3pt, itemsep=2pt]
+  \item Desarrollado en C++ con arquitectura cliente-servidor, utilizando
+        sockets TCP bloqueantes y multithreading
+  \item Motor gráfico implementado con SDL2pp, e interfaz gráfica construida
+        con Qt
+  \item Repositorio en GitHub:
+        \href{https://github.com/LautaroTorraca/cs2d}{github.com/LautaroTorraca/cs2d}
+\end{itemize}
+
+% ── Habilidades Técnicas ───────────────────────────────────────────────────────
+\section*{Habilidades Técnicas}
+
+\textbf{Lenguajes de programación:} JavaScript, TypeScript, Python, Java, C/C++, React
+
+\textbf{Herramientas y tecnologías:} Git, Docker, Docker Compose, UML, Oracle EPM Cloud
+(PBCS), Hyperion Planning, Power BI
+
+\textbf{Bases de datos:} SQL (relacionales), Essbase (OLAP multidimensionales)
+
+\textbf{Paradigmas:} Programación Orientada a Objetos (POO), Programación Procedural
+
+\textbf{Testing:} Pruebas unitarias, Test-Driven Development (TDD)
+
+% ── Habilidades Personales ─────────────────────────────────────────────────────
+\section*{Habilidades Personales}
+
+Atención al detalle y calidad del código
+\quad\textperiodcentered\quad Sólidas habilidades analíticas y de resolución de problemas
+
+Capacidad para trabajar de forma autónoma y en equipo
+\quad\textperiodcentered\quad Gestión eficaz del tiempo y habilidades de comunicación
+
+% ── Idiomas ────────────────────────────────────────────────────────────────────
+\section*{Idiomas}
+
+Español (Nativo)
+\quad\textperiodcentered\quad Portugués (Nativo, Bilingüe)
+\quad\textperiodcentered\quad Inglés (Competencia profesional)
+
+\end{document}
